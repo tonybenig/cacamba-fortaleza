@@ -37,14 +37,19 @@ footer{background:var(--hero-bg2);padding:3rem 5% 1.5rem;border-top:1px solid rg
 .footer-links{display:flex;gap:1.5rem}
 .footer-links a{font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:var(--amarelo)}
-@media(max-width:900px){nav ul{display:none}}
 
-    /* ======================== MENU HAMBURGUER ======================== */
-    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:transparent;border:none;z-index:300}
+
+    /* ── Nav base ── */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--nav-bg);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;border-bottom:1px solid rgba(245,166,35,0.15)}
+
+    /* ── Hamburger button ── */
+    .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;background:transparent;border:none;z-index:300;margin-left:auto}
     .nav-hamburger span{display:block;width:24px;height:2px;background:var(--branco);border-radius:2px;transition:all .3s}
     .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
     .nav-hamburger.open span:nth-child(2){opacity:0}
     .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+    /* ── Mobile ── */
     @media(max-width:900px){
       .nav-hamburger{display:flex}
       nav ul{
@@ -66,18 +71,20 @@ footer{background:var(--hero-bg2);padding:3rem 5% 1.5rem;border-top:1px solid rg
         border-bottom:1px solid rgba(255,255,255,0.05);
       }
       nav ul li:last-child a{border-bottom:none}
-      .nav-cta{margin:.5rem 5%;border-radius:8px;text-align:center;display:block}
+      .nav-cta{margin:.5rem 5% !important;border-radius:8px !important;text-align:center;display:block !important;padding:12px 5% !important}
     }
-
 </style>
 </head>
 <body>
-<nav>
+<nav aria-label="Navegação principal">
   <a href="index.html" class="logo">Caçamba<span>CE</span></a>
-  <ul>
+  <ul id="navMenu">
     <li><a href="index.html">Início</a></li>
-    <li><a href="aluguel-cacamba-fortaleza.html">Serviços</a></li>
-    <li><a href="index.html#contato" class="nav-cta">Orçamento</a></li>
+    <li><a href="index.html#sobre">Sobre</a></li>
+    <li><a href="index.html#servicos">Serviços</a></li>
+    <li><a href="index.html#como-funciona">Como funciona</a></li>
+    <li><a href="index.html#contato">Contato</a></li>
+    <li><a href="index.html#contato" class="nav-cta">Pedir orçamento</a></li>
   </ul>
   <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menu" onclick="toggleNav()">
     <span></span><span></span><span></span>
@@ -175,16 +182,19 @@ footer{background:var(--hero-bg2);padding:3rem 5% 1.5rem;border-top:1px solid rg
 </footer>
 <script>
   function toggleNav(){
-    const ul = document.querySelector('nav ul');
+    const ul = document.getElementById('navMenu');
     const btn = document.getElementById('navHamburger');
     ul.classList.toggle('open');
     btn.classList.toggle('open');
+    document.body.style.overflow = ul.classList.contains('open') ? 'hidden' : '';
   }
-  // Fechar menu ao clicar em link
-  document.querySelectorAll('nav ul a').forEach(a => {
-    a.addEventListener('click', () => {
-      document.querySelector('nav ul').classList.remove('open');
-      document.getElementById('navHamburger').classList.remove('open');
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('#navMenu a').forEach(function(a){
+      a.addEventListener('click', function(){
+        document.getElementById('navMenu').classList.remove('open');
+        document.getElementById('navHamburger').classList.remove('open');
+        document.body.style.overflow = '';
+      });
     });
   });
 </script>
