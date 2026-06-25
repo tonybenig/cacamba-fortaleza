@@ -13,4 +13,4 @@ Site institucional desenvolvido para serviços de aluguel de caçambas e contain
 * Aluguel de Container
 * Disk Entulho
 * Política de Privacidade
-* Termos de Us
+* Termos de Uso
