@@ -136,7 +136,38 @@ footer{background:var(--hero-bg2);padding:4rem 5% 2rem;border-top:1px solid rgba
 /* RESPONSIVE */
 @media(max-width:900px){nav ul{list-style:none;display:flex;gap:1.75rem;align-items:center}.page-hero-inner{grid-template-columns:1fr}.hero-img-wrap{display:none}.about-inner{grid-template-columns:1fr}.steps-grid{grid-template-columns:1fr}.cta-form-inner{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){section{padding:60px 5%}.footer-grid{grid-template-columns:1fr}}
-</style>
+
+    /* ======================== MENU HAMBURGUER ======================== */
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:transparent;border:none;z-index:300}
+    .nav-hamburger span{display:block;width:24px;height:2px;background:var(--branco);border-radius:2px;transition:all .3s}
+    .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .nav-hamburger.open span:nth-child(2){opacity:0}
+    .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    @media(max-width:900px){
+      .nav-hamburger{display:flex}
+      nav ul{
+        display:none;
+        position:fixed;top:64px;left:0;right:0;
+        background:var(--nav-bg);
+        flex-direction:column;
+        gap:0;
+        padding:1rem 0;
+        border-bottom:1px solid rgba(245,166,35,0.15);
+        z-index:199;
+        box-shadow:0 8px 24px rgba(0,0,0,0.3);
+      }
+      nav ul.open{display:flex}
+      nav ul li a{
+        display:block;
+        padding:.85rem 5%;
+        font-size:15px;
+        border-bottom:1px solid rgba(255,255,255,0.05);
+      }
+      nav ul li:last-child a{border-bottom:none}
+      .nav-cta{margin:.5rem 5%;border-radius:8px;text-align:center;display:block}
+    }
+
+  </style>
 </head>
 <body>
 
@@ -150,6 +181,9 @@ footer{background:var(--hero-bg2);padding:4rem 5% 2rem;border-top:1px solid rgba
     <li><a href="index.html#contato">Contato</a></li>
     <li><a href="#orcamento" class="nav-cta">Pedir orçamento</a></li>
   </ul>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menu" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <main>
@@ -166,7 +200,7 @@ footer{background:var(--hero-bg2);padding:4rem 5% 2rem;border-top:1px solid rgba
       </div>
     </div>
     <div class="hero-img-wrap">
-      <img src="Container-para-entulho-Fortaleza.jpg" alt="Container para entulho Fortaleza" loading="eager"/>
+      <img src="Container-para-Entulho-Fortaleza.jpg" alt="Container para entulho Fortaleza" loading="eager"/>
     </div>
   </div>
 </section>
