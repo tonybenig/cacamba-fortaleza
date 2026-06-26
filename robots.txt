@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /politica-de-privacidade.html
+Disallow: /termos-de-uso.html
+
+Sitemap: https://www.cacambaparaentulho.com.br/sitemap.xml
