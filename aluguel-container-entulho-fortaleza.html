@@ -11,22 +11,7 @@
   "name":"Aluguel de Container para Entulho em Fortaleza","areaServed":"Fortaleza",
   "provider":{"@type":"LocalBusiness","name":"Caçamba CE","address":{"@type":"PostalAddress","addressLocality":"Fortaleza","addressRegion":"CE"}},
   "url":"https://www.cacambaparaentulho.com.br/aluguel-container-entulho-fortaleza.html"
-}  function toggleNav(){
-    const ul = document.getElementById('navMenu');
-    const btn = document.getElementById('navHamburger');
-    ul.classList.toggle('open');
-    btn.classList.toggle('open');
-    document.body.style.overflow = ul.classList.contains('open') ? 'hidden' : '';
-  }
-  document.addEventListener('DOMContentLoaded', function(){
-    document.querySelectorAll('#navMenu a').forEach(function(a){
-      a.addEventListener('click', function(){
-        document.getElementById('navMenu').classList.remove('open');
-        document.getElementById('navHamburger').classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-  });
+}
 </script>
 <script type="application/ld+json">{
   "@context":"https://schema.org","@type":"BreadcrumbList",
@@ -35,8 +20,8 @@
     {"@type":"ListItem","position":2,"name":"Aluguel de Container para Entulho em Fortaleza","item":"https://www.cacambaparaentulho.com.br/aluguel-container-entulho-fortaleza.html"}
   ]
 }</script>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
-  <link rel="shortcut icon" href="favicon.svg"/>
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="shortcut icon" href="favicon.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet"/>
 <style>
@@ -159,6 +144,8 @@ footer{background:var(--hero-bg2);padding:4rem 5% 2rem;border-top:1px solid rgba
 .footer-links a:hover{color:var(--amarelo)}
 
 
+
+@media(max-width:900px){
   .page-hero-inner{grid-template-columns:1fr}
   .hero-img-wrap{display:none}
   .about-inner{grid-template-columns:1fr}
@@ -218,8 +205,8 @@ footer{background:var(--hero-bg2);padding:4rem 5% 2rem;border-top:1px solid rgba
     <li><a href="index.html#sobre">Sobre</a></li>
     <li><a href="index.html#servicos">Serviços</a></li>
     <li><a href="index.html#como-funciona">Como funciona</a></li>
-    <li><a href="index.html#contato">Contato</a></li>
-    <li><a href="index.html#contato" class="nav-cta">Pedir orçamento</a></li>
+    <li><a href="#orcamento">Contato</a></li>
+    <li><a href="#orcamento" class="nav-cta">Pedir orçamento</a></li>
   </ul>
   <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menu" onclick="toggleNav()">
     <span></span><span></span><span></span>
@@ -239,7 +226,7 @@ footer{background:var(--hero-bg2);padding:4rem 5% 2rem;border-top:1px solid rgba
       </div>
     </div>
     <div class="hero-img-wrap">
-      <img src="Aluguel-de-container-para-entulho.jpg" alt="Aluguel de container para entulho em Fortaleza" loading="eager"/>
+      <img src="Aluguel-de-container-para-entulho.webp" alt="Aluguel de container para entulho em Fortaleza" loading="eager"/>
     </div>
   </div>
 </section>
@@ -247,7 +234,7 @@ footer{background:var(--hero-bg2);padding:4rem 5% 2rem;border-top:1px solid rgba
 <section class="about-section">
   <div class="about-inner">
     <div class="about-img">
-      <img src="Container-para-Entulho-Fortaleza.jpg" alt="Container para entulho Fortaleza CE" loading="lazy"/>
+      <img src="Container-para-Entulho-Fortaleza.webp" alt="Container para entulho Fortaleza CE" loading="lazy"/>
       <div class="about-badge"><strong>+10</strong><span>anos em<br/>Fortaleza</span></div>
     </div>
     <div>
@@ -371,7 +358,7 @@ footer{background:var(--hero-bg2);padding:4rem 5% 2rem;border-top:1px solid rgba
       <li><a href="index.html#sobre">Sobre</a></li>
       <li><a href="index.html#servicos">Serviços</a></li>
       <li><a href="index.html#como-funciona">Como funciona</a></li>
-      <li><a href="index.html#contato">Contato</a></li>
+      <li><a href="#orcamento">Contato</a></li>
     </ul></div>
   </div>
   <div class="footer-bottom">
@@ -447,6 +434,24 @@ footer{background:var(--hero-bg2);padding:4rem 5% 2rem;border-top:1px solid rgba
       btn.disabled = false;
     }
   }
+</script>
+<script>
+  function toggleNav(){
+    var ul = document.getElementById('navMenu');
+    var btn = document.getElementById('navHamburger');
+    ul.classList.toggle('open');
+    btn.classList.toggle('open');
+    document.body.style.overflow = ul.classList.contains('open') ? 'hidden' : '';
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('#navMenu a').forEach(function(a){
+      a.addEventListener('click', function(){
+        document.getElementById('navMenu').classList.remove('open');
+        document.getElementById('navHamburger').classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  });
 </script>
 </body>
 </html>
